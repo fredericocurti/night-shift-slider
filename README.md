@@ -1,19 +1,23 @@
-# night-shift-slider
+# <img src='./icon.png' height='20' /> Night Shift Slider
+
 A simple macOS menu bar widget for quickly adjusting the native Night Shift color temperature.
 
-- Works on macOS >= Sierra 10.12.4
+**Update 2024:**
 
-__Usage__
-   - Download Night Shift Slider.app from [releases](https://github.com/fredericocurti/night-shift-slider/releases)
-or build it with Xcode
+- Release 2.0.0 - Added Apple Silicon support
+
+## Usage
+
+Download **Night Shift Slider.app** from [releases](https://github.com/fredericocurti/night-shift-slider/releases) and drag it to Applications folder or build it with Xcode
 
 <img src='./demo.gif'>
 
-**-- the temperature change isn't recordable**
+<br />
 
+> The temperature change isn't recordable
 
+_Works on macOS >= Big Sur_
 
-- Thanks to [@jenghis](https://github.com/jenghis) for the inspiration and usage of the CoreBrightness API
+### Credits
 
-
-
+Thanks to [@jenghis](https://github.com/jenghis) for the inspiration and usage of the CoreBrightness API

@@ -31,9 +31,6 @@ class SliderViewController: NSViewController {
         bluelightClient.setStrength(amount, commit: true)
         bluelightClient.setEnabled(true)
     }
-    
-
-    
 }
 
 extension SliderViewController {

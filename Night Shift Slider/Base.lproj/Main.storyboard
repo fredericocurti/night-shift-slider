@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23094"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -619,7 +620,7 @@
                                         <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
-                                                <action selector="toggleSourceList:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
+                                                <action selector="toggleSidebar:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
@@ -688,26 +689,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="213" height="35"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <slider identifier="amountSlider" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x2B-JZ-4xg">
-                                <rect key="frame" x="31" y="8" width="164" height="19"/>
+                            <button identifier="closeButton" autoresizesSubviews="NO" toolTip="Close" imageHugsTitle="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hfq-0O-4CQ">
+                                <rect key="frame" x="8" y="11" width="19.5" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="5.7282561188811192" tickMarkPosition="above" sliderType="linear" id="eVn-ng-Pxd"/>
+                                <buttonCell key="cell" type="inline" bezelStyle="inline" image="xmark.circle.fill" catalog="system" imagePosition="left" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="sUS-4K-1Sk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="14"/>
+                                </buttonCell>
+                                <symbolConfiguration key="symbolConfiguration" scale="small">
+                                    <nil key="locale"/>
+                                </symbolConfiguration>
+                                <connections>
+                                    <action selector="buttonTapped:" target="XfG-lQ-9wD" id="Qkz-3S-1JG"/>
+                                </connections>
+                            </button>
+                            <slider identifier="amountSlider" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x2B-JZ-4xg">
+                                <rect key="frame" x="35" y="6" width="164" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="32.407924107142854" tickMarkPosition="above" sliderType="linear" id="eVn-ng-Pxd"/>
                                 <connections>
                                     <action selector="sliderChanged:" target="XfG-lQ-9wD" id="z0E-iG-zE6"/>
                                     <binding destination="XfG-lQ-9wD" name="value" keyPath="amountSlider" id="4eC-RZ-zBR"/>
                                 </connections>
                             </slider>
-                            <button identifier="closeButton" autoresizesSubviews="NO" toolTip="Close" verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hfq-0O-4CQ">
-                                <rect key="frame" x="12" y="10" width="13" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="inline" bezelStyle="inline" image="NSStopProgressFreestandingTemplate" imagePosition="right" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="sUS-4K-1Sk">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="smallSystemBold"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="buttonTapped:" target="XfG-lQ-9wD" id="Qkz-3S-1JG"/>
-                                </connections>
-                            </button>
                         </subviews>
                     </view>
                 </viewController>
@@ -718,6 +722,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NSStopProgressFreestandingTemplate" width="11" height="11"/>
+        <image name="xmark.circle.fill" catalog="system" width="15" height="15"/>
     </resources>
 </document>
